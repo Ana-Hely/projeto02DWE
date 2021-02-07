@@ -1,0 +1,63 @@
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="lista.css">
+    <script src="https://www.gstatic.com/firebasejs/8.2.4/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.2.4/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.2.4/firebase-firestore.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.2.4/firebase-storage.js"></script>
+    <script src="/env.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+    <script src="lista.js"></script>
+    <title>Cadastros</title>
+</head>
+<body>
+    <div class="bg-img">
+        <nav id="menu">
+            <img src="/assets/user.png" id="img">
+            <label id="email"></label> <br><br>
+            <hr><br><br><br><br><br>
+            <a id="btnPerfil" href="../perfil/config.html">Perfil</a>
+            <a id="btnCadastro" href="../home/home.html">Cadastrar Problema</a>
+            <a id="btnLogar" href="/index.html">Logar</a>
+            <a id="btnListar" href="lista.html">Listar Problemas</a>            
+            <a id="btnSair" class="" href="/index.html">
+                <i class="fas fa-sign-out-alt"></i> Sair
+            </a>
+            <br><br><br><br><br><hr> 
+        </nav>
+        
+    <main class="conteudo">
+        <div>
+            <h1>Problemas Cadastrados</h1>
+            <p> A tabela abaixo lista os problemas cadastrados no sistema.</p>
+        </div>
+        
+        <br><br><br>
+        <div>            
+            <table class="content-table" id="table">
+                
+                <tbody id="tableBory">
+                    <!--<tr>
+                        <td>O poste da minha rua não funciona, a rua está toda escura a meses.</td>
+                        <td>Eloy Chaves, Jundiaí, SP.</td>
+                        <td>FOTO AQUI.</td>
+                        <td>
+                            <button class="delete" onClick="removeLinha(this)"></button>
+                        </td>                    
+                    </tr>-->
+                </tbody>           
+            </table>
+
+            
+        </div>     
+    </main>
+    
+    <footer>
+        <p id="footer"><p>© 2020 Desenvolvido por: Ana Hely Torres e Natália Bravo |<a href="https://www.openstreetmap.org"> Map data © OpenStreetMap </a>.</p>    
+    </footer>
+    
+</body>
+</html>

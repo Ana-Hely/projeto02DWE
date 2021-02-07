@@ -1,0 +1,51 @@
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" href="index.css">
+    <script src="https://www.gstatic.com/firebasejs/8.2.4/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.2.4/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.2.4/firebase-firestore.js"></script>
+    <script src="env.js"></script>
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+    <script src="index.js"></script>
+</head>
+<body>
+    <div class="bg-img">
+        <div class="content">
+            <header>Login</header>
+                <form action="#">
+                    <div class="field">
+                        <span class="fa fa-user"></span>
+                        <input type="text" id="email" required placeholder="Digite seu E-mail">
+                    </div>
+                    <div class="field space">
+                        <span class="fa fa-lock"></span>
+                        <input type="password" id="senha" class="password" required placeholder="Digite sua Senha">
+                        <!-- <span class="fa fa-eye" id="eye"></span> --> 
+                        
+                    </div>
+                    <div class="pass">
+                        <a href="/pages/recuperarSenha/recuperarSenha.html">Esqueceu a senha?</a>
+                    </div>            
+                    <!--
+                    <div class="login"> Ou entre com</div>
+                    <div class="link">
+                        <div class="facebook">
+                            <i class="fab fa-facebook-f"><span>Facebook</span></i>
+                        </div>
+                    </div>
+                    -->                                                           
+                </form>
+                <div >
+                    <button id="login" onclick="logar()">LOGIN</button>
+                </div>
+                <div class="signup">Não tem conta?
+                    <a href="/pages/cadastroUser/cadastro.html">Cadastre-se</a>
+                </div> 
+        </div>
+    </div>
+</body>
+</html>

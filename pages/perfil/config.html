@@ -1,0 +1,67 @@
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="config.css">
+    <script src="https://www.gstatic.com/firebasejs/8.2.4/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.2.4/firebase-auth.js"></script>
+    <script src="/env.js"></script>
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+    <script src="config.js"></script>
+    <title>Configurações</title>
+</head>
+<body>
+    <div class="bg-img">
+        <nav id="menu">
+            <img src="/assets/user.png" id="img">
+            <label id="email"></label> <br><br>
+            <hr><br><br><br><br><br>
+            <a href="config.html">Perfil</a>
+            <a href="../home/home.html">Cadastrar Problema</a>
+            <a href="#">Incluir Detalhes</a>
+            <a href="../listaProblemas/lista.html">Listar Problemas</a>            
+            <a class="" href="/index.html">
+                <i class="fas fa-sign-out-alt"></i> Sair
+            </a>
+            <br><br><br><br><br><hr> 
+        </nav>
+        
+    <main class="conteudo">
+        <div>
+            <h1>Configurações do usuário</h1>
+            <p> <br> Abaixo você poderá realizar a alteração da senha cadastrada para acessar o site.</p>
+        </div>
+        <br><br><br>
+        <div>
+            <form>
+                <br><br>
+                <div>
+                    <label>Senha antiga</label>
+                    <input class="field" type="text" id="local">
+                    <br><br>
+                </div>
+                <hr>
+                <div>
+                    <br><br>
+                    <label>Nova senha</label>
+                    <input class="field" type="text" id="local">
+                </div>
+                <div>
+                    <label>Confirmar senha</label>
+                    <input class="field" type="text" id="foto">
+                </div><br><br>
+                <button type="button" onclick="cadastrar()">Salvar</button> 
+                <br><br><br>  
+                <a id="delete" onclick="deletar()">Excluir minha conta</a>      
+            </form>
+            
+        </div>
+    </main>
+    
+    <footer>
+        <p id="footer"><p>© 2020 Desenvolvido por: Ana Hely Torres e Natália Bravo |<a href="https://www.openstreetmap.org"> Map data © OpenStreetMap </a>.</p>    
+    </footer>
+    
+</body>
+</html>

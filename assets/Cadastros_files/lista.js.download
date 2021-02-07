@@ -1,0 +1,139 @@
+window.onload = loadPage;
+
+function loadPage(){
+    if(!localStorage.getItem('id')){
+        tipo = 0
+        hideButton('btnPerfil');
+        hideButton('btnCadastro');
+        hideButton('btnListar');
+        hideButton('btnSair');    
+
+        listaHeader = ['descricao', 'local', 'foto', 'status', 'resposta'];
+        listProblems(tipo, listaHeader);        
+    }
+    else if(localStorage.getItem('id') == 'governo@gov.com'){
+        tipo = 1;
+        hideButton('btnPerfil');
+        hideButton('btnCadastro');
+        hideButton('btnListar');
+        hideButton('btnSair');    
+
+        listaHeader = ['descricao', 'local', 'foto', 'status', 'resposta', 'editar', 'apagar'];
+        listProblems(tipo, listaHeader);
+    }
+    else if(localStorage.getItem('id')){
+        tipo = 2;
+        hideButton('btnPerfil');
+        hideButton('btnCadastro');
+        hideButton('btnListar');
+        hideButton('btnSair');    
+
+        listaHeader = ['descricao', 'local', 'foto', 'status', 'resposta', 'editar', 'apagar'];
+        listProblems(tipo, listaHeader);
+    }
+}
+
+function hideButton(id) {
+    document.getElementById(id).style.display='none';
+    document.getElementById(id).style.visibility='hidden';
+}
+
+function listProblems(tipo, lista) {
+    let tabela = document.getElementById("table");
+    let numLinha = tabela.rows.length;
+    let linha = tabela.insertRow(numLinha);
+    linha.className = "linhaB";
+    i = 0;
+    lista.forEach((head) => {
+        let col = linha.insertCell(i);
+        col.innerHTML = head;       
+        i++;
+    });
+    let select = '';
+   
+    if(tipo == 2){
+        alert('oi');
+        db.collection("Problems").where("idUsuario", "==", localStorage.getItem('id')).get().then(function(querySnapshot) {    
+            querySnapshot.forEach(function(doc) {
+                let numLinha = tabela.rows.length;
+                linha = tabela.insertRow(numLinha);
+                linha.className = "linhaA";
+
+                let col = linha.insertCell(0);
+                col.innerHTML = "<input type='hidden' value='"+doc.id+"'></input>";
+                col.style.display='none';
+                col.style.visibility='hidden';
+
+                for(let j=0; j<lista.length+1; j++){
+                    
+                    if(lista[j] == "descricao"){
+                        alert(doc.data().problemDesc);
+                        col = linha.insertCell(j+1);
+                        col.innerHTML = doc.data().problemDesc;
+                    }
+                    if(lista[j] == "local"){
+                        col = linha.insertCell(j+1);
+                        col.innerHTML = doc.data().problemLocal;
+                    }
+                    if(lista[j] == "foto"){
+                        col = linha.insertCell(j+1);
+                        col.innerHTML = doc.data().foto;
+                    }
+                    if(lista[j] == "status"){
+                        col = linha.insertCell(j+1);
+                        col.innerHTML = doc.data().status;
+                    }
+                    if(lista[j] == "resposta"){
+                        col = linha.insertCell(j+1);
+                        col.innerHTML = doc.data().resposta;
+                    }
+                    if(lista[j] == "editar"){
+                        if(tipo == 1){
+                            col = linha.insertCell(j+1);
+                            col.innerHTML = "<button class='delete' onClick='editGov(this)'></button>";
+
+                        }else if(tipo == 2){
+                            col = linha.insertCell(j+1);
+                            col.innerHTML = "<button class='delete' onClick='editUser(this)'></button>";
+                        }                        
+                    }
+                    if(lista[j] == "apagar"){
+                        col = linha.insertCell(j+1);
+                        col.innerHTML = "<button class='delete' onClick='removeLinha(this)'></button>"; 
+                    }
+                }
+
+            });
+        });
+    }else{
+        select = db.collection("Problems").get();
+    }
+
+    for(let i=0; i<select.length; i++){
+        
+
+    }
+    
+}
+
+function removeLinha(linha) {
+    var i= linha.parentNode.parentNode;
+    document.getElementById('table').deleteRow(i.rowIndex);    
+    var id = i.cells[0].getElementsByTagName('input')[0].value;
+
+    event.preventDefault();
+    //let idProblem = document.getElementById("idProblem");
+    //db.collection("problems").doc(id).delete()
+    db.doc('Problems/'+id).delete().then(function () {
+        Swal.fire("problema deletado");
+    }).catch(function(error){
+        Swal.fire("erro ao tentar excluir: ", error);
+    })    
+}
+
+function listProblem(event) {
+    event.preventDefault();
+
+    var query = db.collection("problems").where("local", "==", "Jundiaí");
+    console.log(query);
+}

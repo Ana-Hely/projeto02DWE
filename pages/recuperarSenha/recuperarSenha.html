@@ -1,0 +1,33 @@
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recuperar Senha</title>
+    <link rel="stylesheet" href="recuperarSenha.css">
+    <script src="https://www.gstatic.com/firebasejs/8.2.4/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.2.4/firebase-auth.js"></script>
+    <script src="/env.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+    <script src="recuperarSenha.js"></script>
+</head>
+<body>
+    <div class="bg-img">
+        <div class="content">
+            <header>RECUPERAÇÃO DE SENHA</header>
+                <form action="#">
+                    
+                    <div class="field space">
+                        <input type="text" id="email" required placeholder="E-mail">
+                    </div>
+                                                                  
+                </form>
+                <div> 
+                    <button onclick="resetarSenha()">Enviar e-mail</button>
+                </div> 
+                <br><br>
+                <a href="/index.html">Voltar</a>
+        </div>
+    </div>
+</body>
+
+</html>

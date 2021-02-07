@@ -1,0 +1,16 @@
+{
+  "name": "projetodwe_02",
+  "version": "1.0.0",
+  "description": "Projeto 02 de desenvolvimento web ",
+  "main": "index.html",
+  "dependencies": {
+    "lite-server": "^2.6.1"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "start": "lite-server",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Ana Hely C. Torres",
+  "license": "ISC"
+}

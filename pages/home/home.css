@@ -1,0 +1,151 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    background-color: #f1efef;
+}
+
+#img {
+    width: 120;
+    padding-top: 20px;
+    padding-bottom: 10px;
+}
+
+/*
+header {
+    background: rgba(26,26,26,.65);
+    padding: 2px 15px;
+    font-size: 18px;
+    color: white;
+    text-align: right;
+    margin-left: 200px;
+}*/
+
+#email {
+    color: white;
+}
+
+nav {
+    background: url('/assets/img6.jpg');
+    height: 100vh;
+    background-size: cover;
+    background-position: center;
+
+    text-align: center;
+    width: 250px;
+    background-color: #5f5f5f;
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    z-index: 1;
+}
+
+nav a{
+    text-decoration: none;
+    text-align: center;
+    color: white;
+    font-size: 22px;
+    display: block;
+    padding: 15px 12px 10px 0px;
+}
+
+nav a:hover {
+    color:  #333;
+    background-color: white;
+}
+
+/*.bg-img {
+    background: url('/assets/img1.jpg');
+    height: 100vh;
+    background-size: cover;
+    background-position: center;
+}*/
+
+h1 {
+    color: black;
+    padding-top: 50px;
+    padding-left: 300px;
+    text-align: left;
+}
+
+.conteudo p {
+    padding-left: 300px;
+    text-align: left;
+}
+
+form {
+    /* Apenas para centralizar o form na página */
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    margin-left: 700px;
+    margin-top: 60px;
+    width: 700px;
+    height: 500px;
+    /* Para ver as bordas do formulário */
+    padding: 1em;
+   /* border: 1px solid #CCC;
+    border-radius: 1em;*/
+    padding-left: 20px;
+}
+
+.field {
+    padding: 4px;
+    /*margin-left: 30%;*/
+    margin-bottom: 15px;
+    border: 1px solid rgb(194, 187, 187);
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    border-radius: 5px;
+    font-size: 20px;
+    width: 100%;
+}
+
+h2 {
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    padding-left: 3px;
+    font-size: 26px;
+}
+
+.spacing {
+    padding: 4px;
+    /*margin-left: 30%;*/
+    margin-bottom: 15px;
+    border: 1px solid rgb(194, 187, 187);
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    border-radius: 5px;
+    font-size: 20px;
+    width: 78%;
+}
+
+#btn-cad {
+    background-color: #828083;
+    border: 1px solid rgb(2, 2, 2);
+    color: #f3f2f2;
+    padding: 10px;
+    margin-left: 150px;
+    font-size: 16px;
+    width: 410px;
+}
+
+#btn-pic {
+    background-color: rgb(187, 186, 186);
+    border: 1px solid rgb(20, 20, 20);
+    padding: 10px;
+    color: #141414;
+    width: 150px;
+    height: 30px;
+    font-size: 12px;
+}
+
+button:hover{
+    background-color: rgb(2, 2, 2);
+}
+
+footer {
+    text-align: right;
+    position: relative;
+    top: 190;
+    color: rgb(20, 22, 24);
+    font-size: small;
+}
